@@ -1,4 +1,1 @@
-<x-layout>
-
-    aqui
-</x-layout>
+<x-layout></x-layout>
