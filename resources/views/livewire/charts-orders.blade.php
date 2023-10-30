@@ -1,8 +1,8 @@
 <div wire:ignore class="mt-4" 
     x-data="{
-         selectedYear: @entangle('selectedYear'),
-         lastYearOrders: @entangle('lastYearOrders'),
-         thisYearOrders: @entangle('thisYearOrders'),
+         selectedYear: @entangle('selectedYear').live,
+         lastYearOrders: @entangle('lastYearOrders').live,
+         thisYearOrders: @entangle('thisYearOrders').live,
          init() {
              const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
              const data = {
@@ -41,7 +41,7 @@
     <select name="selectedYear" id="selectedYear" class="border" wire:model="selectedYear"
         wire:change="updateOrdersCount">
         @foreach ($availableYears as $year)
-        <option value="{{ $year }}">{{ $year }}</option>
+            <option value="{{ $year }}">{{ $year }}</option>
         @endforeach
     </select>
     
