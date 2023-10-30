@@ -6,10 +6,10 @@
         </div>
     </div>
 
-    <livewire:chart-orders />
-    
-    @push('scripts')
+    <livewire:charts-orders/>
 
+    @push('scripts')
+    
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     @endpush
 </x-layout>
