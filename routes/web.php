@@ -151,3 +151,7 @@ function fields(Request $request)
         'body' => $request->body,
     ];
 }
+
+Route::get('/drag-drop', function () {
+    return view('drag-drop');
+});
