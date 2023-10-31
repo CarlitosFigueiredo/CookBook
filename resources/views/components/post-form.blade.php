@@ -1,11 +1,12 @@
-<form>
-    @if ($post->exists)
-        <form action="/posts/{{ $post->id }}" method="POST" class="lg:w-1/2">
-            @method('PATCH')
-        @else
-            <form action="/posts/create" method="POST" class="lg:w-1/2">
-    @endif
+
+@if ($post->exists)
+    <form action="/posts/{{ $post->id }}" method="POST" class="lg:w-1/2">
+        @method('PATCH')
+    @else
+        <form action="/posts/create" method="POST" class="lg:w-1/2">
+@endif
     @csrf
+
     <div class="mt-4">
         <label for="title" class="font-semibold block">Title</label>
         <input type="text" name="title" id="title" class="border border-gray-400 rounded w-full px-2 py-2 mt-2" value="{{ old('title', $post->title) }}">
